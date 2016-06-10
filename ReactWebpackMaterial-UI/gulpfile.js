@@ -7,6 +7,7 @@ var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig = require('./webpack.config.js');
 var path = require('path');
 var mocha = require('gulp-mocha');
+
 require('ts-node').register({project:path.join(__dirname, "test")});
 
 
