@@ -1,6 +1,6 @@
 # Read Me
-This a throw away project, just used to see how feasible it is to integrate material-ui.
-
+Test project implementing Material-UI, just used to see how feasible it is to integrate material-ui.
+![ScreenShot](2016-06-09_20-54-00.png)
 # Next
 Recreate the ReactWebpack project using material-ui. This will server as the basis of the React Framework implementation.
 
