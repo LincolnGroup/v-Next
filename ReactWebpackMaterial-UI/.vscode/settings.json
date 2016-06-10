@@ -1,0 +1,33 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "fileHeaderCommentHelper.languageConfigs": {
+        "language_javascript": {
+            "template": [
+                "/*",
+                " * Project: $(projectName)",
+                " * File: $(currentFile)",
+                " */"
+            ]
+        },
+        "language_typescript": {
+            "template": [
+                "/*",
+                " * Project: $(projectName)",
+                " * File: $(currentFile)",
+                " * Date: $(currentDate)",
+                " */"
+            ]
+        },
+        "language_typescriptreact": {
+            "template": [
+                "/// <reference path=\"../../typings/tsd.d.ts\"/>",
+                " * Project: $(projectName)",
+                " * File: $(currentFile)",
+                " * Date: $(currentDate)",
+                " import * as React from 'react';",
+                " import {connect} from 'react-redux';",
+                " import {Paper} from 'material-ui'"
+            ]
+        }
+    }
+}
