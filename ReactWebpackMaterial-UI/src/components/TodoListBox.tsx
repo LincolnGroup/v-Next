@@ -7,6 +7,8 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {Paper} from 'material-ui';
 
+import { ViewContext} from "../core/ViewContext";
+
 import {Table, TableRow, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRowColumn, RaisedButton, TextField, IconButton} from 'material-ui';
 
 import {TodoState} from '../reducers/todos';
@@ -19,16 +21,10 @@ export interface ITodoListBoxProps extends React.Props<TodoListBox> {
     todos?: TodoItem[];
     dispatch?: (action: TodoAction) => any
 }
-import {deepOrange500} from 'material-ui/styles/colors';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { AppBar } from "material-ui";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+
 import {Page } from "./Page";
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
-  },
-});
+
+
 @connect((state: TodoState) => (state.todos))
 export class TodoListBox extends React.Component<ITodoListBoxProps, ITodoListBoxState> {
     constructor() {
@@ -46,16 +42,19 @@ export class TodoListBox extends React.Component<ITodoListBoxProps, ITodoListBox
     onAddTodoClick() {
         this.props.dispatch(addTodoAction((this.refs['todoInput'] as TextField).getValue()));
     }
-    render() {
-        const App = () => (
-        <MuiThemeProvider  muiTheme={muiTheme} >
-            <div>
-                <Page dispatch="todoInput" /></div>   
-        </MuiThemeProvider>);
-        return (                        
-              <App />    
-            );
+
+    createChildControls(){
+         return (
+             <div>
+                <h1> React render only allows one child container </h1>
+                <Page title="Henry" />
+            </div>)
+    }    
+    render() {        
+        return (ViewContext.View(
+            this.createChildControls()));
     }
+    
     private getTodoRows() {
         return this.props.todos.map((todo, index) => {
             return <TableRow key={todo.id}>
@@ -65,3 +64,4 @@ export class TodoListBox extends React.Component<ITodoListBoxProps, ITodoListBox
         });
     }
 }
+

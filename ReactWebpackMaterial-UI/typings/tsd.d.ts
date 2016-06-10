@@ -6,7 +6,7 @@
 /// <reference path="chai/chai.d.ts" />
 /// <reference path="mocha/mocha.d.ts" />
 /// <reference path="react/react-dom.d.ts" />
-
+/// <reference path="react-swipeable-views/react-swipeable-views.d.ts" />
 declare namespace __MaterialUI {
     import React = __React;
     namespace Table {
