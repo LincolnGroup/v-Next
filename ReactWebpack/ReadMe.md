@@ -33,9 +33,10 @@ typings install --global --save dt~react-dom
 ```
 This command will create a file called typings.json and a folder called typings in the current directory.
 
-To test the site.
+# Running Example
 
-NodeJS - To start up a simple web server in the app folder, first globally install the http-server command with <code>npm install http-server -g </code>.  Once that is installed, change directory to the template folder. You can now spin up the server from within the folder with the following command <code>http-server -o -c-1 </code>.
+NodeJS - To start up a simple web server in the app folder, first globally install the http-server command with
+<code>npm install http-server -g </code>.  Once that is installed, change directory to the template folder. You can now spin up the server from within the folder with the following command <code>http-server -o -c-1 </code>.
 
 
 
